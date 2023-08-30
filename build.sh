@@ -2,13 +2,14 @@
 
 BASE_DIR=${PWD}
 VOID_PACKAGES_GIT=https://github.com/void-linux/void-packages.git
-VOID_PACKAGES_DIR=${BASE_DIR}/void-packages
-JUMPAPP_BUILD_DIR=${VOID_PACKAGES_DIR}/srcpkgs/jumpapp
+JUMPAPP_BUILD_DIR=${BASE_DIR}/void-packages/srcpkgs/jumpapp
 
-# git clone ${VOID_PACKAGES_GIT}
-cd ${VOID_PACKAGES_DIR}
+# Clone official Void Linux build solution
+git clone ${VOID_PACKAGES_GIT} void-packages
+cd ${BASE_DIR}/void-packages
 ./xbps-src binary-bootstrap
 
+# Create 'jumpapp' folder and build using ./xbps-src
 if [ ! -d ${JUMPAPP_BUILD_DIR} ]; then mkdir ${JUMPAPP_BUILD_DIR}; fi
 cp ${BASE_DIR}/template ${JUMPAPP_BUILD_DIR}/
-cd ${VOID_PACKAGES_DIR} && ./xbps-src pkg jumpapp
+cd ${BASE_DIR}/void-packages && ./xbps-src pkg jumpapp
