@@ -7,6 +7,7 @@ Scripts use [official way](https://github.com/void-linux/void-packages/blob/mast
 ## Build and install
 ```bash
 git clone https://github.com/DiTsi/jumpapp.git
+cd jumpapp
 ./build.sh
 ./install.sh
 ```
