@@ -1,0 +1,16 @@
+# Template file for 'jumpapp'
+pkgname=jumpapp
+version=1.2
+revision=1
+build_style=gnu-makefile
+makedepends="lua53 pandoc perl"
+short_desc="A run-or-raise application switcher for any X11 desktop"
+maintainer="Michael Kropat <hello@kropat.email>"
+license="MIT"
+homepage="https://github.com/mkropat/jumpapp"
+distfiles="https://github.com/mkropat/${pkgname}/releases/download/v${version}/${pkgname}_${version}.tar.bz2"
+checksum=794da8dc4a24b2cf9a380f6de4bbdcc8ad951aa92c9c2340cf1ffd5c939c6d9c
+
+# pre_build() {
+# 	CFLAGS="-DVERSION=\\\"$version\\\""
+# }
